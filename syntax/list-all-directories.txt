@@ -1,0 +1,16 @@
+list-all-directories.txt
+Created Thu Jun  6 15:19:56 AKDT 2019
+Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+List all directories in working directory
+except ".":
+
+$ find * -maxdepth 1 -type d | less
+
+
+Links
+=====
+How to exclude a directory in find . command
+https://stackoverflow.com/questions/4210042/how-to-exclude-a-directory-in-find-command
+
