@@ -13,3 +13,6 @@ list-all-directories.txt
   --How to exclude a directory in find . command
   https://stackoverflow.com/questions/4210042/how-to-exclude-a-directory-in-find-command
 
+list-with-date-and-path.txt
+  To recursively list with date and path:
+  $ find . -exec ls --full-time $PWD/{} \;
