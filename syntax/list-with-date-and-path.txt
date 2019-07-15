@@ -1,0 +1,18 @@
+list-with-date-and-path.txt
+Created Mon Jul 15 10:39:53 AKDT 2019
+Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+To recursively list with date and path:
+
+$ find . -exec ls --full-time $PWD/{} \;
+total 16
+-rwx------ 1 remarcil remarcil 2047 2019-07-15 10:29:51.769000000 -0800 csc2_roucc_copy.sh
+-rwx------ 1 remarcil remarcil 1969 2019-07-15 10:29:46.153000000 -0800 csc2_roucc_copy.sh-PRIOR-20190715
+-rw-r--r-- 1 remarcil remarcil  965 2019-07-15 10:36:24.149000000 -0800 README
+-rwx------ 1 remarcil remarcil 1880 2019-07-15 10:30:03.289000000 -0800 uccdir_ucc_copy.sh
+-rwx------ 1 remarcil remarcil 2047 2019-07-15 10:29:51.769000000 -0800 /home/remarcil/git/dnr/recoff/tools/./csc2_roucc_copy.sh
+-rwx------ 1 remarcil remarcil 1969 2019-07-15 10:29:46.153000000 -0800 /home/remarcil/git/dnr/recoff/tools/./csc2_roucc_copy.sh-PRIOR-20190715
+-rw-r--r-- 1 remarcil remarcil 965 2019-07-15 10:36:24.149000000 -0800 /home/remarcil/git/dnr/recoff/tools/./README
+-rwx------ 1 remarcil remarcil 1880 2019-07-15 10:30:03.289000000 -0800 /home/remarcil/git/dnr/recoff/tools/./uccdir_ucc_copy.sh
+$ 
