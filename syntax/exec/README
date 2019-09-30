@@ -1,0 +1,10 @@
+README
+Created Mon Sep 30 13:30:04 AKDT 2019
+Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Filelist
+========
+exec.txt
+  Basic usage of -exec
+  https://unix.stackexchange.com/questions/389705/understanding-the-exec-option-of-find
