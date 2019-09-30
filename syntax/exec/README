@@ -5,6 +5,9 @@ Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
 
 Filelist
 ========
+examples.txt
+  Examples of find -exec
+
 exec.txt
   Basic usage of -exec
   https://unix.stackexchange.com/questions/389705/understanding-the-exec-option-of-find
