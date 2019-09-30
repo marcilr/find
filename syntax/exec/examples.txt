@@ -1,0 +1,26 @@
+examples.txt
+Created Mon Sep 30 13:32:07 AKDT 2019
+Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Examples for find -exec
+
+
+Find and sort (granted not an -exec example): 
+#  find . -name 'access_log*' | sort
+./access_log
+./access_log-20190908
+./access_log-20190915
+./access_log-20190922
+./access_log-20190929
+#
+
+
+Find and get length:
+# find . -name 'access_log*' -exec wc -l {} ';'
+14157 ./access_log-20190929
+9632 ./access_log-20190915
+2152 ./access_log
+6046 ./access_log-20190922
+5985 ./access_log-20190908
+#
