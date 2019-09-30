@@ -1,0 +1,78 @@
+exec.txt
+Created Mon Sep 30 11:08:01 AKDT 2019
+Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+"Basic usage of -exec
+
+The -exec option takes an external utility with optional
+arguments as its argument and executes it.
+
+If the string {} is present anywhere in the given command,
+each instance of it will be replaced by the pathname
+currently being processed (e.g. ./some/path/FILENAME).
+In most shells, the two characters {} does not need to be
+quoted.
+
+The command needs to be terminated with a ; for find to
+know where it ends (as there may be further options
+afterwards).  To protect the ; from the shell, it needs to
+be quoted as \; or ';', otherwise the shell will see it as
+the end of the find command.
+
+Example (the \ at the end of the first two lines are just
+for line continuations):
+
+  find . -type f -name '*.txt'      \
+     -exec grep -q 'hello' {} ';'   \
+     -exec cat {} ';'
+
+This will find all regular files (-type f) whose names
+matches the pattern *.txt in or below the current directory.
+It will then test whether the string hello occurs in any of
+the found files using grep -q (which does not produce any
+output, just an exit status).  For those files that contain
+the string, cat will be executed to output the contents of
+the file to the terminal.
+
+Each -exec also acts like a "test" on the pathnames found by
+find, just like -type and -name does.  If the command returns
+a zero exit status (signifying "success"), the next part of
+the find command is considered, otherwise the find command
+continues with the next pathname.  This is used in the
+example above to find files that contain the string hello,
+but to ignore all other files.
+
+The above example illustrates the two most common use cases
+of -exec:
+
+1. As a test to further restrict the search.
+2. To perform some kind of action on the found pathname
+   (usually, but not necessarily, at the end of the find
+   command)."
+...
+--unix.stackexchange.com/questions/389705/
+
+
+-exec command ;
+    Execute command; true if 0 status is returned.  All following
+    arguments to find are taken to be arguments to the command
+    until an argument consisting of ‘;’ is encountered.  The string 
+    ‘{}’ is replaced by the current file name being processed
+    everywhere it occurs in the arguments to the command, not just
+    in arguments where it is alone, as in some versions of find.
+    Both of these constructions might need to be escaped (with a ‘\’)
+    or quoted to protect them from expansion by the shell.  See the
+    EXAMPLES section for examples of the use of the -exec option.
+    The specified command is run once for each matched file.  The
+    command is executed in the starting directory.   There are
+    unavoidable security problems surrounding use of the -exec action;
+    you should use the -execdir option instead.
+    --man, find (GNU findutils) 4.4.2
+
+
+Links
+=====
+Understanding the -exec option of `find`
+UNIX & Linux
+https://unix.stackexchange.com/questions/389705/understanding-the-exec-option-of-find
